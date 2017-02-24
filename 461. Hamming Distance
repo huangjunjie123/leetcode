@@ -1,0 +1,35 @@
+class Solution(object):
+    def hammingDistance(self, x, y):
+        """
+        :type x: int
+        :type y: int
+        :rtype: int
+        """
+        return bin(x^y).count('1')
+ 
+ '''
+ x is int, y is int
+ (x^y) is int    
+ bin(x^y) turn the int into binary
+ .count(1) counts the '1' in the binary
+ 
+ 
+ x^y 抑或值的过程,the return is an int：
+ if x=9 y=11
+ the process of x^y is:
+    turn int x into bin(x):1001
+    turn int y into bin(y):1011
+    compare two binaries
+    if they are same then 0         e.g. 1 and 1=0; 0 and 0=0
+    if they are not same then 1     e.g. 1 and 0=1; 
+    thus x^y=0010
+    then turn into int
+    0010=2  this is an int 
+    
+
+but hamming distance is to tell how much pairs are different(0,1;not double 1 or double 0), namely to count the '1'(because double 1 or double 0 is 0)
+therefore you have first transfer x^y from int into binary
+so binary(x^y)
+finally count the 1
+so binary(x^y).count('1')
+'''
